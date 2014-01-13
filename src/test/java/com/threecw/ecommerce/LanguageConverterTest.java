@@ -14,7 +14,7 @@ public class LanguageConverterTest {
 		LanguageConverter converter=new LanguageConverter();
 		String code=""
 				+ "$_=array();\n"
-				+ "$_['test_key']='test_value';\n"
+				+ "$_[\"test_key\"]=\"test_value\";\n"
 				+ "";
 		InputStream is=new ByteArrayInputStream(code.getBytes());
 		String result=converter.convertToString(is);
