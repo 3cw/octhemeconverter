@@ -40,7 +40,7 @@ public class LanguageConverter {
 		phpCode.append(""
 				+ "\n"
 				+ " foreach ($_ as $key=>$value){\n"
-				+ "	echo \"$key=$value;\n\";"
+				+ "	echo \"$key=$value\n\";"
 				+ "}\n"
 				+ "");
 		

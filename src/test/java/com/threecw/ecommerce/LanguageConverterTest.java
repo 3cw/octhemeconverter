@@ -18,6 +18,6 @@ public class LanguageConverterTest {
 				+ "";
 		InputStream is=new ByteArrayInputStream(code.getBytes());
 		String result=converter.convertToString(is);
-		Assert.assertEquals("test_key=test_value;\n", result);
+		Assert.assertEquals("test_key=test_value\n", result);
 	}
 }
