@@ -9,12 +9,13 @@
   <url>https://github.com/3cw/octhemeconverter</url>
   
   <dependencies>
+
       
  		<dependency>
-			<groupId>com.caucho</groupId>
-			<artifactId>quercus</artifactId>
-			<version>4.0-SNAPSHOT</version>
-			<exclusions>
+			  <groupId>com.caucho</groupId>
+			  <artifactId>resin</artifactId>
+			  <version>4.0.30</version>
+  			<exclusions>
 				<exclusion>
 					<groupId>com.caucho</groupId>
 					<artifactId>resin-javaee16</artifactId>
