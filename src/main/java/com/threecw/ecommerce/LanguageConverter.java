@@ -1,67 +1,35 @@
 package com.threecw.ecommerce;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-
-import com.caucho.quercus.QuercusContext;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.program.QuercusProgram;
-import com.caucho.vfs.VfsStream;
-import com.caucho.vfs.WriteStream;
+import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LanguageConverter {
+	Pattern p1 = Pattern.compile("\\$_\\['([a-zA-Z0-9_]+)'\\]\\s*=\\s*'(.*)';");
 
-	private QuercusContext quercus;
-
-	public LanguageConverter(){
-		 quercus=new QuercusContext();
-		quercus.setCompile(false);
-		quercus.start();
-		quercus.init();
-//		quercus.setScriptEncoding("iso-8859-1");
-//		quercus.setIni("unicode.runtime_encoding", "iso-8859-1");		
-	}
+	public LanguageConverter(){}
 	
 	public String convertToString(InputStream phpLang) throws IOException{
-		StringBuilder phpCode=new StringBuilder();
-		int b;
+		StringBuilder out=new StringBuilder();
 		
-		while ((b=phpLang.read())!=-1){
-			phpCode.append((char)b);
+		BufferedReader reader=new BufferedReader(new InputStreamReader(phpLang));
+		String b;
+		while ((b=reader.readLine())!=null){
+			b=b.trim();
+			Matcher m = p1.matcher(b);
+			if (m.find()){
+				out.append(m.group(1)+"="+m.group(2)+"\n");
+			}
 		}
 		
-		phpCode.append(""
-				+ "\n"
-				+ " foreach ($_ as $key=>$value){\n"
-				+ "	echo \"$key=$value\n\";"
-				+ "}\n"
-				+ "");
-		
-		String code=phpCode.toString().replaceFirst("<\\?php", "").replaceFirst("\\?>", "");
-
-		QuercusProgram programm=quercus.parseCode(code);
-		ByteArrayOutputStream outStream=new ByteArrayOutputStream();
-		VfsStream writer=new VfsStream(null, outStream);
-
-		
-		WriteStream ws = new WriteStream(writer);
-		
-//		ws.setEncoding("ISO-8859-1");
-		Env env = new Env(quercus, null, ws, null, null);
-		env.start();
-
-		programm.execute(env);
-		ws.flush();
-		
-		String result = new String(outStream.toByteArray());            
-		return result;
+		return out.toString();
 	}
 	
 	private void convertPhpFileToPropertiesFile(File phpFile, File file) throws IOException {
