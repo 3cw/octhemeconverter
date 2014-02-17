@@ -1,0 +1,256 @@
+{
+  "moduleConfig" : {
+    "module/slideshow" : {
+      "scripts" : [ "catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.pack.js" ],
+      "styles" : [ "catalog/view/theme/default/stylesheet/slideshow.css" ]
+    }
+  },
+  "areas":{
+      "checkout_payment":[
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "product":[
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "category":[
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "static":[
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "search":[
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "start":[
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "checkout_shipping":[
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "tag":[
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         }
+      ],
+      "cart":[
+         {
+            "name":"column_right",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"column_left",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_top",
+            "defaultWidgets":[
+
+            ]
+         },
+         {
+            "name":"content_bottom",
+            "defaultWidgets":[
+
+            ]
+         }
+      ]
+   },
+   "features":[
+      "slider",
+      "responsive"
+   ],
+   "settings":[
+      {
+         "code":"logo",
+         "required":false,
+         "overview":false,
+         "type":"string",
+         "helper":"image"
+      }
+   ]}
